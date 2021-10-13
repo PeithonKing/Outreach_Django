@@ -73,12 +73,6 @@ def open_day_gallery(request):
 def educational_visits_about(request):
     return render(request, "educational_visits/about.html")
 
-def educational_visits_resources(request):
-    return render(request, "educational_visits/resources.html")
-
-def educational_visits_persons(request):
-    return render(request, "educational_visits/persons.html")
-
 def educational_visits_gallery(request):
     context = {"images": images("static/gallery/educational_visits")}
     return render(request, "educational_visits/gallery.html", context)

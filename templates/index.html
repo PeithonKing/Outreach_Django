@@ -31,13 +31,11 @@
 			<img src="{% static 'Carousel\bio.jpg' %}" class="d-block w-100">
 		</div>
 	</div>
-	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-		data-bs-slide="prev">
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
 		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Previous</span>
 	</button>
-	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-		data-bs-slide="next">
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="visually-hidden">Next</span>
 	</button>
@@ -99,54 +97,62 @@
 {% block content %}
 <!-- Basic Content -->
 <div class="text-content">
-<div class="infos"><br>
-	<h3>About Us</h3>
-	<p style="text-align: justify">
-		&emsp;&emsp; Science outreach is all about communicating the importance and ideologies of Science with
-		the general population. The general idea is to spread Science among the public in a captivating way
-		which will be encouraging enough for them to think about a future in research or education. NISER is
-		mindful of its social responsibilities and has been reaching out to students and teachers to motivate
-		them in their Scientific pursuit. The activities are coordinated and spread round the year in three
-		categories:
-		<br>&emsp;&emsp;&emsp;&emsp;NISER Open Day,
-		<br>&emsp;&emsp;&emsp;&emsp;Educational Visits of Schools,
-		<br>&emsp;&emsp;&emsp;&emsp;Teacher-training Workshops: Vigyan Pratibha Project.
+	<div class="infos"><br>
+		<h3>About Us</h3>
+		<p style="text-align: justify">
+			&emsp;&emsp; Science outreach is all about communicating the importance and ideologies of Science with
+			the general population. The general idea is to spread Science among the public in a captivating way
+			which will be encouraging enough for them to think about a future in research or education. NISER is
+			mindful of its social responsibilities and has been reaching out to students and teachers to motivate
+			them in their Scientific pursuit. The activities are coordinated and spread round the year in three
+			categories:
+			<br>&emsp;&emsp;&emsp;&emsp;NISER Open Day,
+			<br>&emsp;&emsp;&emsp;&emsp;Educational Visits of Schools,
+			<br>&emsp;&emsp;&emsp;&emsp;Teacher-training Workshops: Vigyan Pratibha Project.
 
-	</p><br>
-	<h3>Our vision</h3>
-	<p style="text-align: justify">
-		&emsp;&emsp; To provides a single window for services such as online and offline education from school
-		to
-		undergraduate level, research programs, online portal for various learning units for schools, online
-		teachers’ webinars, online and on-site teachers’ workshops, spiritual heritage programs for national and
-		international audiences on current scenario, publication of books, etc. We started with NISER
-		Educational trips where schools and colleges visit different departments at NISER. Then we moved on to
-		Open day program in which NISER becomes open to all and people from various institutions/ schools can
-		visit NISER for scientific exposure along with learning. Recently we have started teachers’ training
-		workshop in collaboration with HBCSE, Mumbai and IOP, Bhubaneswar in the form of Vigyan Pratibha
-		project.
-	</p><br>
-</div>
+		</p><br>
+		<h3>Our vision</h3>
+		<p style="text-align: justify">
+			&emsp;&emsp; To provides a single window for services such as online and offline education from school
+			to
+			undergraduate level, research programs, online portal for various learning units for schools, online
+			teachers’ webinars, online and on-site teachers’ workshops, spiritual heritage programs for national and
+			international audiences on current scenario, publication of books, etc. We started with NISER
+			Educational trips where schools and colleges visit different departments at NISER. Then we moved on to
+			Open day program in which NISER becomes open to all and people from various institutions/ schools can
+			visit NISER for scientific exposure along with learning. Recently we have started teachers’ training
+			workshop in collaboration with HBCSE, Mumbai and IOP, Bhubaneswar in the form of Vigyan Pratibha
+			project.
+		</p><br>
+	</div>
 </div>
 {% endblock content %}
 
 
 {% block gallery %}
 <!-- Gallery -->
-    <div class="gallery text-center mx-5">
-        <div class="galleryText">
-            <h1>Gallery</h1>
-        </div>
-        <div class="images">
-			{% for image in images %}
-				<a href="{% static image.0 %}" target="_blank"><img src="{% static image.1 %}"></a>
-			{% endfor %}
-        </div>
-        <div class="images" style="margin-bottom: 70px;">
-            <a href="#" target="_blank">
-                <button type="button" class="btn btn-primary" style="float:right">View All Images</button>
-            </a>
-        </div>
-    </div>
-    <!-- End of Gallery -->
+<div class="gallery text-center mx-5">
+	<div class="galleryText">
+		<h1>Gallery</h1>
+	</div>
+	<div class="images">
+		{% for image in images %}
+		<a href="{% static image.0 %}" target="_blank"><img src="{% static image.1 %}"></a>
+		{% endfor %}
+	</div>
+	<div class="images" style="margin-bottom: 70px;">
+		<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1"
+				data-bs-toggle="dropdown" aria-expanded="false" style="float:right">
+				Full Gallery
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+				<li><a class="dropdown-item" href="/open_day/gallery">Open Day</a></li>
+				<li><a class="dropdown-item" href="/educational_visits/gallery">Educational Visits</a></li>
+				<li><a class="dropdown-item" href="/vigyan_pratibha/gallery">Vigyan Pratibha</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End of Gallery -->
 {% endblock gallery %}

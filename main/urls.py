@@ -20,8 +20,6 @@ urlpatterns = [
 
 	# Group of all pages under Educational Visits dropdown...
 	path("educational_visits/about", views.educational_visits_about, name='educational_visits/about'),
-	path("educational_visits/resources", views.educational_visits_resources, name='educational_visits/resources'),
-	path("educational_visits/persons", views.educational_visits_persons, name='educational_visits/persons'),
 	path("educational_visits/gallery", views.educational_visits_gallery, name='educational_visits/gallery'),
 
 
