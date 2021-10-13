@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | NISER Outreach{% endblock title %}
+
+
+{% block carousel %}
+<!-- Carousel -->
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+	<div class="carousel-indicators">
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+			aria-current="true" aria-label="Slide 1"></button>
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+			aria-label="Slide 2"></button>
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+			aria-label="Slide 3"></button>
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+			aria-label="Slide 4"></button>
+	</div>
+	<div class="carousel-inner">
+		<div class="carousel-item active" data-bs-interval="4000">
+			<img src="{% static 'Carousel\phy.jpg' %}" class="d-block w-100">
+		</div>
+		<div class="carousel-item" data-bs-interval="4000">
+			<img src="{% static 'Carousel\RTC.jpg' %}" class="d-block w-100">
+		</div>
+		<div class="carousel-item" data-bs-interval="4000">
+			<img src="{% static 'Carousel\chem.jpg' %}" class="d-block w-100">
+		</div>
+		<div class="carousel-item" data-bs-interval="4000">
+			<img src="{% static 'Carousel\bio.jpg' %}" class="d-block w-100">
+		</div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+		data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+		data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
+<!-- End of Carousel -->
+{% endblock carousel %}
+
+
+{% block card %}
+<!-- Empty link Cards -->
+<div class="container my-4">
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+		<div class="col">
+			<a href="/open_day/about" style="text-decoration: none; color: #000;">
+				<div class="card">
+					<img src="{% static 'emptyLinks\open_day.jpg' %}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Open Day</h5>
+						<p class="card-text">NISER encourages the neighbouring school children to shape scientific
+							minds by allowing them to visit the campus, sharing various models on open day every
+							year.<strong>(Click to view more)</strong>
+						</p>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="/educational_visits/about" style="text-decoration: none; color: #000;">
+				<div class="card">
+					<img src="{% static 'emptyLinks\educational_visits.jpg' %}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Educational Visits of Schools</h5>
+						<p class="card-text">Inquisitive learners from local schools visit NISER for gaining
+							advanced
+							knowledge on Science and technology every year. <strong>(Click to view more)</strong>
+						</p>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col">
+			<a href="/vigyan_pratibha/about" style="text-decoration: none; color: #000;">
+				<div class="card">
+					<img src="{% static 'emptyLinks\vigyan_prathiba.jpg' %}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Teacher-training workshop: Vigyan Prathiba project</h5>
+						<p class="card-text"> This project offers training facilities for enthusiastic students of
+							the per durably poorer section of the society. <strong>(Click to view more)</strong></p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- End of Empty link Cards -->
+{% endblock card %}
+
+
+{% block content %}
+<!-- Basic Content -->
+<div class="text-content">
+<div class="infos"><br>
+	<h3>About Us</h3>
+	<p style="text-align: justify">
+		&emsp;&emsp; Science outreach is all about communicating the importance and ideologies of Science with
+		the general population. The general idea is to spread Science among the public in a captivating way
+		which will be encouraging enough for them to think about a future in research or education. NISER is
+		mindful of its social responsibilities and has been reaching out to students and teachers to motivate
+		them in their Scientific pursuit. The activities are coordinated and spread round the year in three
+		categories:
+		<br>&emsp;&emsp;&emsp;&emsp;NISER Open Day,
+		<br>&emsp;&emsp;&emsp;&emsp;Educational Visits of Schools,
+		<br>&emsp;&emsp;&emsp;&emsp;Teacher-training Workshops: Vigyan Pratibha Project.
+
+	</p><br>
+	<h3>Our vision</h3>
+	<p style="text-align: justify">
+		&emsp;&emsp; To provides a single window for services such as online and offline education from school
+		to
+		undergraduate level, research programs, online portal for various learning units for schools, online
+		teachers’ webinars, online and on-site teachers’ workshops, spiritual heritage programs for national and
+		international audiences on current scenario, publication of books, etc. We started with NISER
+		Educational trips where schools and colleges visit different departments at NISER. Then we moved on to
+		Open day program in which NISER becomes open to all and people from various institutions/ schools can
+		visit NISER for scientific exposure along with learning. Recently we have started teachers’ training
+		workshop in collaboration with HBCSE, Mumbai and IOP, Bhubaneswar in the form of Vigyan Pratibha
+		project.
+	</p><br>
+</div>
+</div>
+{% endblock content %}
+
+
+{% block gallery %}
+<!-- Gallery -->
+    <div class="gallery text-center mx-5">
+        <div class="galleryText">
+            <h1>Gallery</h1>
+        </div>
+        <div class="images">
+			{% for image in images %}
+				<a href="{% static image.0 %}" target="_blank"><img src="{% static image.1 %}"></a>
+			{% endfor %}
+        </div>
+        <div class="images" style="margin-bottom: 70px;">
+            <a href="#" target="_blank">
+                <button type="button" class="btn btn-primary" style="float:right">View All Images</button>
+            </a>
+        </div>
+    </div>
+    <!-- End of Gallery -->
+{% endblock gallery %}

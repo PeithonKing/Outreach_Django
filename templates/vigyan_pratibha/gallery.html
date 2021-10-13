@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery | Vigyan Pratibha{% endblock title %}
+
+{% block content %}
+<div class="galwhole">
+	<div class="gallery text-center mx-5">
+		<h1>Gallery</h1>
+		<h2>December 2019</h2>
+		<div class="images">
+			{% for image in Dec19  %}
+				<a href="{% static image.0 %}" target="_blank"><img src="{% static image.1 %}"></a>
+			{% endfor %}
+		</div>
+		<hr>
+		<br>
+		<h2>October 2019</h2>
+		<div class="images">
+			{% for image in Oct19 %}
+				<a href="{% static image.0 %}" target="_blank"><img src="{% static image.1 %}"></a>
+			{% endfor %}
+		</div>
+		<hr>
+		<br>
+		<h2>March 2019</h2>
+		<div class="images">
+			{% for image in Mar19 %}
+				<a href="{% static image.0 %}" target="_blank"><img src="{% static image.1 %}"></a>
+			{% endfor %}
+		</div>
+		<hr>
+		<br>
+		<h2>Inauguration 2018</h2>
+		<div class="images">
+			{% for image in ing18 %}
+				<a href="{% static image.0 %}" target="_blank"><img src="{% static image.1 %}"></a>
+			{% endfor %}
+		</div>
+
+	</div>
+</div>
+{% endblock content %}
