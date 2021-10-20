@@ -57,6 +57,7 @@
                             <li><a class="dropdown-item" href="/open_day/2021">2021</a></li>
                             <li><a class="dropdown-item" href="/open_day/past">Past</a></li>
                             <li><a class="dropdown-item" href="/open_day/gallery">Gallery</a></li>
+                            <!-- <li><a class="dropdown-item" href="/open_day/feedback">Feedback</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -66,7 +67,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/educational_visits/about">About</a></li>
+                            <li><a class="dropdown-item" href="https://docs.google.com/forms/u/1/d/1pwzuDbi071h6zx5U1P8IReesc4ZJVw9ee0PKPyKSS_c/edit?usp=drive_web">Registration Form</a></li>
                             <li><a class="dropdown-item" href="/educational_visits/gallery">Gallery</a></li>
+                            <!-- <li><a class="dropdown-item" href="/educational_visits/feedback">Feedback</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -79,6 +82,7 @@
                             <li><a class="dropdown-item" href="/vigyan_pratibha/resource_persons">Resource Persons</a></li>
                             <li><a class="dropdown-item" href="https://vigyanpratibha.in/">HBCSE Site</a></li>
                             <li><a class="dropdown-item" href="/vigyan_pratibha/gallery">Gallery</a></li>
+                            <!-- <li><a class="dropdown-item" href="/vigyan_pratibha/feedback">Feedback</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -106,28 +110,39 @@
         <h3>News and Announcements</h3>
         <marquee direction="up" height="250px" scrollamount="5" onMouseOver="this.stop();" onMouseOut="this.start();">
             <ul class="ul-news">
-                <li><a href="#" style="text-decoration: none; color: #003311"><span class="badge bg-primary"
-                            style="animation: blink 1s linear infinite;">New</span>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi ex incidunt quis reprehenderit
-                        vel soluta maxime accusantium unde voluptas excepturi ipsam neque quisquam esse a eaque
-                        voluptate sequi, beatae ut.</a>
-                </li><br>
-                <li><a href="#" style="text-decoration: none; color: #003311"><span class="badge bg-primary"
-                            style="animation: blink 1s linear infinite;">New</span>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi ex incidunt quis reprehenderit
-                        vel soluta maxime accusantium unde voluptas excepturi ipsam neque quisquam esse a eaque
-                        voluptate sequi, beatae ut.</a>
-                </li><br>
-                <li><a href="#" style="text-decoration: none; color: #003311"><span class="badge bg-danger">Old</span>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi ex incidunt quis reprehenderit
-                        vel soluta maxime accusantium unde voluptas excepturi ipsam neque quisquam esse a eaque
-                        voluptate sequi, beatae ut.</a>
-                </li><br>
-                <li><a href="#" style="text-decoration: none; color: #003311"><span class="badge bg-danger">Old</span>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi ex incidunt quis reprehenderit
-                        vel soluta maxime accusantium unde voluptas excepturi ipsam neque quisquam esse a eaque
-                        voluptate sequi, beatae ut.</a>
-                </li><br>
+
+                {% for news in allNews %}
+                    {% if news.new %}
+                        <li>
+                            {% if news.URL != "" %}
+                                <a href="{{ news.URL }}" style="text-decoration: none; color: #003311">
+                                    <span class="badge bg-primary"style="animation: blink 1s linear infinite;">New</span>
+                                    {{ news.news }}
+                                        <h6 style="text-decoration: none; color: darkblue">[Click here]</h6>
+                                </a>
+                            {% else %}
+                                <span class="badge bg-primary"style="animation: blink 1s linear infinite;">New</span> {{ news.news }}
+                            {% endif %}
+                        </li><br>
+                    {% endif %}
+                {% endfor %}
+
+                {% for news in allNews %}
+                    {% if not news.new %}
+                        <li>
+                            {% if news.URL != "" %}
+                                <a href="{{ news.URL }}" style="text-decoration: none; color: #003311">
+                                    <span class="badge bg-danger">Old</span>
+                                    {{ news.news }}
+                                        <h6 style="text-decoration: none; color: darkblue">[Click here]</h6>
+                                </a>
+                            {% else %}
+                                <span class="badge bg-danger">Old</span> {{ news.news }}
+                            {% endif %}
+                        </li><br>
+                    {% endif %}
+                {% endfor %}
+                
             </ul>
         </marquee>
 
@@ -147,14 +162,14 @@
     <section id="footer">
         <div class="footer container">
             <h2>NISER Outreach Committee</h2>
-            <h4>Dr. Debasmita P. Alone</h4>
-            <h4>Chairperson, Outreach Committee</h4>
-            <a href="debasmita@niser.ac.in"><div class="social mail" title="Mail Us" target="_blank"><i class="far fa-envelope"></i>&nbsp;debasmita@niser.ac.in</div></a>
+            <h3>Dr. Debasmita P. Alone</h3>
+            <h3>Chairperson, Outreach Committee</h3>
+            <a href="mailto:debasmita@niser.ac.in"><div class="social mail" title="Mail Us" target="_blank"><i class="far fa-envelope"></i>&nbsp;debasmita@niser.ac.in</div></a>
             <h3>National Institute of Science Education and Research</h3>
             <h4>Bhubaneswar, India</h4><br>
             
-            <h4>This page is prepared by Aritra Mukhopadhyay</h4>
-            <h4>Email:- amukherjeeniser@gmail.com</h4>
+            <h5>This page is prepared by Aritra Mukhopadhyay (Int. M.Sc)</h5>
+            <h5>Email:- amukherjeeniser@gmail.com</h5>
         </div>
     </section>
     <!-- End Footer -->
@@ -166,3 +181,11 @@
 </body>
 
 </html>
+
+
+<!-- CONTACT US
+Please feel free to write to us at outreach@niser.ac.in for further details.
+
+Dr. Debasmita P. Alone
+Chairperson, Outreach Committee
+NISER, Jatni -->
