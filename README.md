@@ -18,7 +18,7 @@ A web page made with the help of python, Django, to be used by the Outreach Comm
 
 
 **Step 2:** Make a Virtual Environment (if you don't have virtual environment library of python, do `pip install virtualenv`).\
-Make a virtual environment with the command `virtualenv [virtualenv_name]` and activate it with `.\venv\Scripts\activate`.
+Make a virtual environment with the command `virtualenv venv` and activate it with `.\venv\Scripts\activate`.
 
 **Step 3:** Clone this repository:
 ```
