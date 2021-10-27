@@ -4,13 +4,13 @@
 A web page made with the help of python, Django, to be used by the Outreach Community of NISER.
 
 
-## Authors
+## Author
 * Aritra Mukhopadhyay
     * Email: [amukherjeeniser@gmail.com](mailto:amukherjeeniser@gmail.com)
 
   
 ## Installations
-  *For actual server deployment, refer to [this](https://docs.djangoproject.com/en/3.2/howto/deployment/) page.*
+  *For actual server deployment, refer to [Django Documentation](https://docs.djangoproject.com/en/3.2/howto/deployment/).*
   
   Apart from that, for development purposes, to setup a local version we should do this:
 
@@ -41,8 +41,14 @@ python manage.py migrate
 ```
 python manage.py createsuperuser
 ```
+This pas
 Having a strong Password is highly recommended.\
 (While deploying for the server, Provide this username and Password to the user, Outreach Committee)
+
+* Populate the database:
+```
+python populate.py
+```
 
 * Run the server:
 ```
@@ -56,13 +62,18 @@ The `static\sgallery` folder contains all the images which will be actually show
 2. **To add some new images or to remove images from the existing pages,** just keep/delete the image in appropriate place under the `static\gallery`. The image will automatically go to the appropriate place. Remember to keep/delete the reduced version of the same file **with the same name** in the `static\sgallery` folder.
 
 
-    **Note:** Only file with the extensions `.jpg`, `.jepg`, `.png` and `.jfif` will be hosted on the page. If you have an image file with some different extensions there are two ways out:
+    **Note:** Only file with the extensions `.jpg`, `.jepg`, `.png` and `.jfif` will be hosted on the page. If you have an image file with some different extensions they wont be shown. In such cases, there are two ways out:
     - Change the `images()` function in `main\views.py` file
-    - Convert the file to any of the above extensions. Remember to change the file in both the `gallery` and `sgallery` folders. The filenames should be same including the extension.
+    - Convert the file to any of the above extensions. Remember to change the file in both the `gallery` and `sgallery` folders. The filenames should be same including the **extension**.
 
 3. **To make a new page:**
     - Make that page and keep it in appropriate places under the `templates` directory.
     - Have its URL listed in the `main\urls.py` file.
     - Write its view in the `main\views.py` file.
 
-4. **To add new news or webinars or to edit them,** go to the admin section of the page.
+4. **To add new**
+    - news,
+    - webinars, 
+    - or Student coordinators
+        
+        **or to edit them,** go to the admin section of the page.
