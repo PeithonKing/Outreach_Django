@@ -5,4 +5,5 @@ from .models import *
 # admin.site.register(CommentEducationalVisits)
 # admin.site.register(CommentVigyanPratibha)
 admin.site.register(News)
-# admin.site.register(Webinars)
+admin.site.register(Coordinators)
+admin.site.register(Webinars)

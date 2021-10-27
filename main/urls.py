@@ -22,6 +22,7 @@ urlpatterns = [
 	path("open_day/about", views.open_day_about, name ='open_day/about'),
 	path("open_day/2021", views.open_day_2021, name ='open_day/2021'),
 	path("open_day/past", views.open_day_past, name ='open_day/past'),
+	path("open_day/student_coordinators", views.open_day_student_coordinators, name ='open_day/student_coordinators'),
 	path("open_day/gallery", views.open_day_gallery, name ='open_day/gallery'),
 	# path("open_day/feedback", views.open_day_feedback, name ='open_day/feedback'),
 

@@ -59,6 +59,13 @@ def open_day_2021(request):
 def open_day_past(request):
     return render(request, "open_day/past.html", {"allNews": News.objects.all()})
 
+def open_day_student_coordinators(request):
+    return render(request, "open_day/student_coordinators.html",
+                  {
+                      "allNews": News.objects.all(),
+                      "coordinators": Coordinators.objects.all().order_by("-year"),
+                      })
+
 def open_day_gallery(request):
     context = {"p2017": images("static/gallery/open_day/2017"),
                "p2018": images("static/gallery/open_day/2018"),
@@ -188,7 +195,21 @@ def vigyan_pratibha_gallery(request):
 
 # Webinars
 def webinars(request):
-    return render(request, "webinars.html", {"allNews": News.objects.all()})
+    all = Webinars.objects.all()
+    up = []
+    past = []
+    now = dt.now()
+    for q in all:
+        if q.time > now:
+            up.append(q)
+        else:
+            past.append(q)
+    return render(request, "webinars.html", 
+                  {
+                      "allNews": News.objects.all(),
+                      "upcoming": up,
+                      "past": past,
+                      })
 
 
 

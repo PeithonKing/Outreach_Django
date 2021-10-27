@@ -4,4 +4,62 @@
 {% block title %}Webinars | NISER Outreach{% endblock title %}
 
 {% block content %}
+
+<h1 class="gallery text-center mx-5">Upcoming Webinars</h1><br><br><br>
+{% for webinar in upcoming %}
+<div class="card mb-3">
+	<div class="row g-0">
+		<div class="col-md-4">
+			<img src="/{{ webinar.poster }}" class="img-fluid rounded-start">
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title">{{ webinar.name }}</h5>
+				<p class="card-text"><strong>Time:</strong> {{ webinar.time }}</p>
+				<p class="card-text">{{ webinar.info|safe }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}<br><br>
+
+
+<h1 class="gallery text-center mx-5">Past Webinars</h1><br><br><br>
+{% for webinar in past %}
+<div class="card mb-3">
+	<div class="row g-0">
+		<div class="col-md-4">
+			<img src="/{{ webinar.poster }}" class="img-fluid rounded-start">
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title">{{ webinar.name }}</h5>
+				<p class="card-text"><strong>Time:</strong> {{ webinar.time }}</p>
+				<p class="card-text">{{ webinar.info|safe }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+
+
+
+<!-- {% for webinar in past %}
+<div class="card mb-3">
+	<div class="row g-0">
+		<div class="col-md-4">
+			<img src="/{{ webinar.poster }}" class="img-fluid rounded-start">
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<h5 class="card-title">{{ webinar.name }}</h5>
+				<p class="card-text"><strong>Time:</strong> {{ webinar.time }}</p>
+				<p class="card-text">{{ webinar.info|safe }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %} -->
+
+
 {% endblock content %}

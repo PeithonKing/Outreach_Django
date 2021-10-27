@@ -1,6 +1,6 @@
 # from typing_extensions import Required
 from django.db import models
-# from django.utils import timezone as dt
+from django.utils import timezone as dt
 from ckeditor.fields import RichTextField
 
 # class CommentOpenDay(models.Model):
@@ -55,12 +55,23 @@ class News(models.Model):
             return "[old]" + " " + self.news
 
 
-# class Webinars(models.Model):
+class Coordinators(models.Model):
+    name = models.CharField(max_length=50)
+    year = models.IntegerField(default = 2022)
+    picture = models.ImageField(upload_to = "static/student_coordinators")
     
-#     body = RichTextField(blank = True, null = True)
+    def __str__(self):
+        return f"[{self.year}] {self.name}"
+
+
+class Webinars(models.Model):
+    name = models.TextField(verbose_name="Name of the Webinar", null=True)
+    time = models.DateTimeField(default=None)
+    poster = models.ImageField(default="static/no-poster-available.jpg", upload_to = "static/webinars", verbose_name="Posters (if Any) Image files only")
+    info = RichTextField(verbose_name="Informations (All other things you want to write)", null=True)
     
-#     def __str__(self):
-#         if self.new:
-#             return "[new]" + " " + self.news
-#         else:
-#             return "[old]" + " " + self.news
+    def __str__(self):
+        if self.time > dt.now():
+            return f"[upcoming], Date: {self.time}, {self.name}"
+        else:
+            return f"[past], Date: {self.time}, {self.name}"
