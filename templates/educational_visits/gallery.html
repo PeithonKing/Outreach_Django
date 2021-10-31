@@ -9,7 +9,7 @@
 		<h1>Gallery</h1>
 		<div class="images">
 			{% for image in images %}
-			<a href="{% static image.0 %}" target="_blank"><img src="{% static image.1 %}"></a>
+			<a href="{% static image.0 %}" target="_blank"><img loading="lazy" src="{% static image.1 %}"></a>
 			{% endfor %}
 		</div>
 	</div>
