@@ -2,8 +2,7 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    console.log(document.documentElement.scrollTop)
-    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    if (document.documentElement.scrollTop > 80) {
         document.getElementById("topLogo").style.width = "45px";
     } else {
         document.getElementById("topLogo").style.width = "100px";
