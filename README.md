@@ -31,6 +31,11 @@ git clone https://github.com/PeithonKing/Outreach_Django.git
 cd Outreach_Django
 ```
 
+* Install Requirements
+```
+pip install -r requirements.txt
+```
+
 * Make the migrations and apply them:
 ```
 python manage.py makemigrations
